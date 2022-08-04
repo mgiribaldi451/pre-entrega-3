@@ -1,0 +1,34 @@
+<h2>User Profile</h2>
+
+{{#if isUser}}
+<div class="container text-center my-3">
+    <div class="jumbotron" style="background-color: green;color: white;">
+        <h1>USER OK LOGIN!</h1>
+        <h2><i>Bienvenido {{user.firstName}}</i></h2>
+        <br>
+        <h3>Nombre: {{user.firstName}}</h3>
+        <h3>Apellido: {{user.lastName}}</h3>
+        {{#each resp.prod}}
+            <h3>Producto: {{this.name}} Precio: {{this.price}}</h3>
+        {{/each}}
+       
+
+        <form action="/logout">
+            <div class="text-center"></div>
+            <button class="btn btn-danger my-5">LOGOUT</button>
+    </div>
+    
+    </form>
+        <form class="form" role="form" action="/carrito/{{user.username}}" method="get" autocomplete="off">
+        <div class="form-group">
+        <input class="btn btn-success my-3" type="submit" value="Login">
+        </div>
+    </form>
+</div>
+</div>
+{{/if}}
+
+
+
+
+

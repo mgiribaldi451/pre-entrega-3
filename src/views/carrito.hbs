@@ -1,0 +1,16 @@
+<div class="container text-center my-3">
+    <div class="jumbotron" style="background-color: green;color: white;">
+
+        {{#each resp.productos}}
+        <h3>Producto: {{this.name}} Precio: {{this.price}}</h3>
+        {{/each}}
+
+
+        <form action="/logout">
+            <div class="text-center"></div>
+            <button class="btn btn-danger my-5">Logout</button>
+        </form>
+    </div>
+
+
+</div>
