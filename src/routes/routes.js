@@ -57,6 +57,22 @@ async function getProfile (req, res) {
     }
 }
 
+async function getCart (req, res) {
+    
+        let resp = await axios.get('http://localhost:8080/carrito')
+        .then((response)=>{
+            return response.data
+        })
+        .catch((error)=>{
+            console.log(error);
+        })
+        
+       let productos = resp.prod[0]
+        console.log(productos);
+        res.render('carrito', { productos  })
+}
+
+
 function getFaillogin (req, res) {
     logger.warn(`Hubo un problema al iniciar session`);
     res.render('login-error', {});
@@ -105,7 +121,8 @@ module.exports = {
     postSignup,
     getFailsignup,
     checkAuthentication,
-    getProfile
+    getProfile,
+    getCart
     
 }
   

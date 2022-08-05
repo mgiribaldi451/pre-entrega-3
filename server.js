@@ -175,6 +175,8 @@ app.get('/ruta-protegida', routes.checkAuthentication, (req, res) => {
     res.render('protected')
 });
 
+app.get('/carro', routes.getCart);
+
 //  FAIL ROUTE
 app.get('*', routes.failRoute);
 

@@ -11,8 +11,8 @@ async function getCart(req,res){
     //let prod = await cartDao.getCarritoNombre(req.params.name)
     //
     let prod = await cartDao.getCarrito()
-    //res.render('carrito' , {prod})
-    res.json({prod})
+    res.json( {prod})
+    //res.json({prod})
 }
 
 

@@ -1,9 +1,11 @@
 <div class="container text-center my-3">
     <div class="jumbotron" style="background-color: green;color: white;">
-
-        {{#each resp.productos}}
+        <div>
+        {{#each productos.productos}}
         <h3>Producto: {{this.name}} Precio: {{this.price}}</h3>
         {{/each}}
+        </div>
+
 
 
         <form action="/logout">
